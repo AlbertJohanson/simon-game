@@ -1,5 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import './styles/components/App.css'
+import { 
+    Route,
+    BrowserRouter as Router,
+    Switch } from "react-router-dom";
+import Welcome from './screens/Welcome';
+import Game  from './screens/Game';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(
+    <Router>
+        <Switch> 
+            <Route path="/game">
+                <Game />         
+            </Route>
+            <Route path="/">
+                <Welcome />         
+            </Route>
+        </Switch>
+    </Router>
+, document.getElementById('app'));
