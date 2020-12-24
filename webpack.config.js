@@ -2,6 +2,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path')
 
+
+const SRC = path.resolve(__dirname, 'node_modules');
+
 module.exports = {
   
   entry: "./src/index.js",
@@ -40,7 +43,29 @@ module.exports = {
                   'css-loader',
                 ],
               },
+              {
+                test: /\.(gif|png|jpe?g|svg)$/i,
+                use: [
+                  'file-loader',
+                  {
+                    loader: 'image-webpack-loader',
+                    options: {
+                      bypassOnDebug: true,
+                      disable: true, 
+                    },
+                  },
+                ]},
+                {
+                  test: /\.mp3$/,
+                  loader: 'file-loader',
+                  query: {
+                    name: 'static/media/[name].[hash:8].[ext]'
+                  }
+                }
         ]
+    },
+    devServer: {
+      historyApiFallback: true
     },
     plugins: [
         new HtmlWebpackPlugin({
