@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import audios from '../audios';
-
+import { connect } from 'react-redux'
 
 export class Player extends Component {
     componentDidUpdate() {
@@ -24,4 +24,9 @@ export class Player extends Component {
     }
 }
 
-export default Player
+export default connect(({ pads, game }) => {
+    const active = pads.find(({ active }) => active);
+    return {
+      active: active ? active.id : null,
+    };
+  })(Player);

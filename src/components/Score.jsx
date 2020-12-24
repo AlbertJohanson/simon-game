@@ -18,7 +18,7 @@ text-align: center;
 z-index: 2;
 padding: 5px;
 box-shadow: 0 0 15px rgba(0, 0, 0, .8);
-text-align: center;
+text-align: center;}
 `;
 
 export default Score;

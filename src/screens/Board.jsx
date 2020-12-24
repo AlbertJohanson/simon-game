@@ -6,6 +6,7 @@ import Game from "../components/Game";
 import CenterOverlay from "../components/CenterOverlay";
 import GrayScale from "../components/GrayScale";
 import { actionCreators } from '../actions/game';
+import { Button } from "../components/Buttons";
 import { Flex } from 'reflexbox'
 import sleep from '../utils/sleep'
 import Pads from '../components/Pads'
@@ -13,7 +14,7 @@ import Score from "../components/Score";
 import Player from './Player'
 import { NEXT_LEVEL_DELAY_TIME, SONG_DELAY_TIME } from '../constants';
 
- function Board(props){
+export function Board(props){
 
     const { actions } = props;
 

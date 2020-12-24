@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import {Flex, Box} from 'reflexbox'
 import Header from '../components/Header';
+import { connect } from "react-redux";
 
-export default class Shell extends Component {
+ class Shell extends Component {
     render() {
         const { highscore, style, children } = this.props;
         return (
@@ -13,7 +14,7 @@ export default class Shell extends Component {
             >
                 <Header p={2} justify="space-between" flex>
                     <Box>
-                        HIGH SCORE:  <br />
+                        HIGH SCORE:  {highscore}<br />
                     </Box>
                 </Header>
                 <Box
@@ -30,3 +31,5 @@ export default class Shell extends Component {
         )
     }
 }
+
+export default connect(({ game }) => game)(Shell);
