@@ -46,12 +46,12 @@ const Pad = styled(Box)`
         border-radius: 320px 20px 20px 20px;
     }
 
-    &.top-rigth {
+    &.top-right {
         border-radius: 20px 320px 20px 20px;
     }
 
     &.bottom-left {
-        border-radius: 320px 20px 20px 320px;
+        border-radius: 20px 20px 20px 320px;
     }
 
     &.bottom-right {

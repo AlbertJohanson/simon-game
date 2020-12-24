@@ -9,6 +9,7 @@ import { actionCreators } from '../actions/game';
 import { Flex } from 'reflexbox'
 import sleep from '../utils/sleep'
 import Pads from '../components/Pads'
+import Score from "../components/Score";
 import Player from './Player'
 import { NEXT_LEVEL_DELAY_TIME, SONG_DELAY_TIME } from '../constants';
 
